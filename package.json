@@ -5,7 +5,7 @@
   "description": "Michelle Mejía 2259",
   "main": "index.js",
   "scripts": {
-    "start": "node \\\\wsl.localhost\\Ubuntu\\home\\mmejia\\22596\\api\\Lab5----API\\main.js",
+    "start": "node \\\\wsl.localhost\\Ubuntu\\home\\mmejia\\22596\\api\\Lab5----API\\src\\main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tu Nombre",
