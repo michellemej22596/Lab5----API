@@ -4,6 +4,11 @@ const { getAllPosts, getPostById, createPost, updatePost, deletePost } = require
 const app = express();
 app.use(express.json());
 
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
 // Obtener todos los posts
 app.get('/posts', async (req, res) => {
   const posts = await getAllPosts();
