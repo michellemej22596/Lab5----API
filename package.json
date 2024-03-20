@@ -1,0 +1,17 @@
+{
+  "type": "commonjs",
+  "name": "express",
+  "version": "1.0.0",
+  "description": "Michelle Mejía 2259",
+  "main": "index.js",
+  "scripts": {
+    "start": "node \\\\wsl.localhost\\Ubuntu\\home\\mmejia\\22596\\api\\Lab5----API\\main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tu Nombre",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3",
+    "mysql2": "^3.9.2"
+  }
+}
