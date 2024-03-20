@@ -4,6 +4,32 @@ const { getAllPosts, getPostById, createPost, updatePost, deletePost } = require
 const app = express();
 app.use(express.json());
 
+const fs = require('fs');
+const path = require('path');
+
+// Función para escribir en el archivo de log
+function writeToLog(endpoint, payload, response) {
+    const logMessage = `Endpoint: ${endpoint}\n`;
+    const timestamp = new Date().toISOString();
+    const logEntry = `Time: ${timestamp}\nPayload: ${JSON.stringify(payload)}\nResponse: ${JSON.stringify(response)}\n\n`;
+
+    const logFilePath = path.join(__dirname, 'log.txt');
+
+    fs.appendFile(logFilePath, logMessage + logEntry, (err) => {
+        if (err) {
+            console.error('Error writing to log file:', err);
+        }
+    });
+}
+
+// Ejemplo de cómo usar la función writeToLog
+const endpoint = '/api/example';
+const payload = { data: 'example' };
+const response = { message: 'success' };
+
+writeToLog(endpoint, payload, response);
+
+
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
