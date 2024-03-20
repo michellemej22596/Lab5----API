@@ -16,15 +16,15 @@ async function getPostById(postId) {
 }
 
 //Crear un post
-async function createPost(title, description, team, goalsScored, imageBase64) {
-  const [result] = await conn.query('INSERT INTO blog_posts (title, description, team, goals_scored, image_base64) VALUES (?, ?, ?, ?, ?)', [title, description, team, goalsScored, imageBase64]);
+async function createPost(id, title, description, team, goals_scored,  image_base64) {
+  const [result] = await conn.query('INSERT INTO blog_posts (title, description, team, goals_scored, image_base64) VALUES (?, ?, ?, ?, ?)', [title, description, team, goals_scored, image_base64]);
   return result;
 }
 
 
 // Modificar un post por su ID
-async function updatePost(postId, title, description, team, goalsScored, imageBase64) {
-  const [result] = await conn.query('UPDATE blog_posts SET title = ?, description = ?, team = ?, goals_scored = ?, image_base64 = ? WHERE id = ?', [title, description, team, goalsScored, imageBase64, postId]);
+async function updatePost(title, description, team, goals_scored, image_base64, postId) {
+  const [result] = await conn.query('UPDATE blog_posts SET title = ?, description = ?, team = ?, goals_scored = ?, image_base64 = ? WHERE id = ?', [title, description, team, goals_scored, image_base64, postId ]);
   return result;
 }
 
